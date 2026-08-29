@@ -171,27 +171,34 @@
                             <option value="Astoria Plaza Ortigas">Astoria Plaza Ortigas</option>
                         </select>
                     </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Names of All Guests</label>
+                        <textarea id="input-names" rows="2" placeholder="E.g., Juan Dela Cruz, Maria Dela Cruz..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required></textarea>
+                    </div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Guest Name</label>
-                            <input type="text" id="input-name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Check-in Date</label>
+                            <input type="date" id="input-checkin" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required>
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Number of Guests</label>
-                            <input type="number" id="input-guests" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Duration (Number of Nights)</label>
+                            <input type="number" id="input-nights" placeholder="e.g., 3" min="1" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required>
                         </div>
                     </div>
+
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1">Flight Details (Arrival/Departure)</label>
-                        <textarea id="input-flight" rows="2" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required></textarea>
+                        <textarea id="input-flight" rows="2" placeholder="Arrival PR2777 at 2:00PM..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required></textarea>
                     </div>
 
                     <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100">
-                        <button onclick="submitBooking('whatsapp')" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-xl shadow-sm">
-                            WhatsApp
+                        <button onclick="submitBooking('whatsapp')" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-xl shadow-sm transition-transform active:scale-95">
+                            Send via WhatsApp
                         </button>
-                        <button onclick="submitBooking('sms')" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-sm">
-                            Text SMS
+                        <button onclick="submitBooking('sms')" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-sm transition-transform active:scale-95">
+                            Send via Text SMS
                         </button>
                     </div>
                 </form>
@@ -206,38 +213,68 @@
     </footer>
 
     <!-- ADMIN MODAL (HIDDEN BY DEFAULT) -->
-    <div id="admin-modal" class="hidden fixed inset-0 bg-slate-900/80 z-[100] flex items-center justify-center backdrop-blur-sm">
-        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
+    <div id="admin-modal" class="hidden fixed inset-0 bg-slate-900/80 z-[100] flex items-center justify-center backdrop-blur-sm p-4">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-bold text-slate-900">Admin Dashboard</h3>
                 <button onclick="closeAdmin()" class="text-slate-400 hover:text-red-500 font-bold text-xl">&times;</button>
             </div>
             
-            <div class="space-y-4">
-                <div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
                     <label class="block text-sm font-bold text-slate-700 mb-1">Daily Total Slot Limit</label>
-                    <input type="number" id="admin-limit" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg">
+                    <input type="number" id="admin-limit" class="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg">
                 </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-1">Surge Price Multiplier (e.g., 1.5 for +50%)</label>
-                    <input type="number" step="0.1" id="admin-surge" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Surge Price Multiplier</label>
+                    <input type="number" step="0.1" id="admin-surge" class="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg">
                 </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-1">Bookings Processed Today</label>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Bookings Today</label>
                     <div class="flex gap-2">
-                        <input type="number" id="admin-booked" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg" disabled>
+                        <input type="number" id="admin-booked" class="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg" disabled>
                         <button onclick="resetBookings()" class="px-4 py-2 bg-red-100 text-red-600 rounded-lg font-bold hover:bg-red-200">Reset</button>
                     </div>
                 </div>
-                <button onclick="saveAdminSettings()" class="w-full mt-4 bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800">
-                    Save Changes & Update Prices
-                </button>
             </div>
+
+            <button onclick="saveAdminSettings()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 mb-8">
+                Save System Settings
+            </button>
+
+            <!-- BOOKING TRACKER LEDGER -->
+            <div class="border-t border-slate-200 pt-8">
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="text-xl font-bold text-slate-900">Booking Ledger</h4>
+                    <button onclick="clearLedger()" class="text-sm text-red-500 hover:underline">Clear All History</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-600 text-sm">
+                                <th class="p-3 rounded-tl-lg">Ref ID</th>
+                                <th class="p-3">Destination</th>
+                                <th class="p-3">Guests</th>
+                                <th class="p-3">Check-in</th>
+                                <th class="p-3">Nights</th>
+                                <th class="p-3 rounded-tr-lg">Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="booking-ledger-body" class="text-sm text-slate-700">
+                            <!-- Injected via Javascript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
+        // Target Phone Number
+        const targetNumber = "642041280989";
+
         // 1. Define base data
         const basePrices = {
             'palawan': 6500,
@@ -246,19 +283,24 @@
             'ortigas': 4500
         };
 
-        // 2. Load state from local browser storage (or set defaults)
+        // 2. Load state from local browser storage
         let appState = JSON.parse(localStorage.getItem('variastoria_state')) || {
             dailyLimit: 5,
             bookedToday: 0,
-            surgeMultiplier: 1.25 // 25% price increase when slots run out
+            surgeMultiplier: 1.25,
+            bookings: [] // Array to store all booking records
         };
 
-        // 3. Core function to update the UI based on inventory
+        // 3. Generate Unique Booking Reference
+        function generateRef() {
+            return 'REF-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+        }
+
+        // 4. Update the UI based on inventory
         function renderUI() {
             const isSurgeActive = appState.bookedToday >= appState.dailyLimit;
             const slotsLeft = Math.max(0, appState.dailyLimit - appState.bookedToday);
             
-            // Update the top banner
             const banner = document.getElementById('status-banner');
             if (isSurgeActive) {
                 banner.className = "text-sm font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-200";
@@ -268,40 +310,60 @@
                 banner.innerText = `✅ ${slotsLeft} standard slots remaining today`;
             }
 
-            // Update prices across the board
             const multiplier = isSurgeActive ? appState.surgeMultiplier : 1;
-            
             document.getElementById('price-palawan').innerText = `₱${(basePrices.palawan * multiplier).toLocaleString()}`;
             document.getElementById('price-boracay').innerText = `₱${(basePrices.boracay * multiplier).toLocaleString()}`;
             document.getElementById('price-bohol').innerText = `₱${(basePrices.bohol * multiplier).toLocaleString()}`;
             document.getElementById('price-ortigas').innerText = `₱${(basePrices.ortigas * multiplier).toLocaleString()}`;
         }
 
-        // 4. Booking action triggers inventory update
+        // 5. Submit Booking and Generate Reference
         function submitBooking(method) {
-            const name = document.getElementById('input-name').value;
-            const guests = document.getElementById('input-guests').value;
+            const dest = document.getElementById('input-destination').value;
+            const names = document.getElementById('input-names').value;
+            const checkin = document.getElementById('input-checkin').value;
+            const nights = document.getElementById('input-nights').value;
             const flight = document.getElementById('input-flight').value;
 
-            if(!name || !guests || !flight) return alert("Please fill in all fields.");
+            if(!names || !checkin || !nights || !flight) {
+                return alert("Please fill in all guest names, dates, and flight details.");
+            }
 
-            // Increment bookings and save
+            // Generate tracking ID and save to database
+            const bookingRef = generateRef();
+            const newBooking = {
+                ref: bookingRef,
+                destination: dest,
+                guests: names,
+                checkin: checkin,
+                nights: nights,
+                timestamp: new Date().toLocaleString()
+            };
+
+            appState.bookings.push(newBooking);
             appState.bookedToday += 1;
             localStorage.setItem('variastoria_state', JSON.stringify(appState));
-            renderUI(); // Re-render the new prices if limit hit
-
-            // Standard message send logic
-            const dest = document.getElementById('input-destination').value;
-            const msg = `Booking Request:\nDest: ${dest}\nName: ${name}\nGuests: ${guests}\nFlight: ${flight}`;
             
+            renderUI(); // Update UI in case limit was hit
+
+            // Construct Message with Booking Ref
+            const msg = `Booking Request [${bookingRef}]\n\nDest: ${dest}\nGuests: ${names}\nCheck-in: ${checkin}\nNights: ${nights}\nFlight: ${flight}`;
+            
+            // Notify user of their reference number
+            alert(`Your booking reference is ${bookingRef}. You will now be redirected to send this to our team.`);
+
+            // Open WhatsApp or SMS
             if (method === 'whatsapp') {
-                window.open(`https://wa.me/642041280989?text=${encodeURIComponent(msg)}`, '_blank');
+                window.open(`https://wa.me/${targetNumber}?text=${encodeURIComponent(msg)}`, '_blank');
             } else {
-                window.location.href = `sms:+642041280989?body=${encodeURIComponent(msg)}`;
+                window.location.href = `sms:+${targetNumber}?body=${encodeURIComponent(msg)}`;
             }
+
+            // Reset form
+            document.getElementById('bookingForm').reset();
         }
 
-        // 5. Admin Panel Functions
+        // 6. Admin Panel Functions
         function openAdmin() {
             const pwd = prompt("Enter Admin Password (type 'admin' to test):");
             if(pwd === 'admin') {
@@ -309,6 +371,7 @@
                 document.getElementById('admin-limit').value = appState.dailyLimit;
                 document.getElementById('admin-surge').value = appState.surgeMultiplier;
                 document.getElementById('admin-booked').value = appState.bookedToday;
+                renderLedger();
             } else {
                 alert("Incorrect password.");
             }
@@ -327,18 +390,49 @@
             appState.dailyLimit = parseInt(document.getElementById('admin-limit').value);
             appState.surgeMultiplier = parseFloat(document.getElementById('admin-surge').value);
             localStorage.setItem('variastoria_state', JSON.stringify(appState));
-            closeAdmin();
             renderUI();
             alert("Settings saved. UI has been updated.");
         }
 
-        // Utility: Scroll to form
+        // Render the tracking table in Admin Panel
+        function renderLedger() {
+            const tbody = document.getElementById('booking-ledger-body');
+            tbody.innerHTML = '';
+            
+            if(appState.bookings.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-slate-500">No bookings yet.</td></tr>';
+                return;
+            }
+
+            // Loop backwards so newest is at the top
+            for (let i = appState.bookings.length - 1; i >= 0; i--) {
+                let b = appState.bookings[i];
+                let row = `<tr class="border-b border-slate-100 hover:bg-slate-50">
+                    <td class="p-3 font-bold text-blue-600">${b.ref}</td>
+                    <td class="p-3">${b.destination}</td>
+                    <td class="p-3 truncate max-w-[150px]" title="${b.guests}">${b.guests}</td>
+                    <td class="p-3">${b.checkin}</td>
+                    <td class="p-3">${b.nights}</td>
+                    <td class="p-3 text-xs text-slate-400">${b.timestamp}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            }
+        }
+
+        function clearLedger() {
+            if(confirm("Are you sure you want to delete all booking history? This cannot be undone.")) {
+                appState.bookings = [];
+                localStorage.setItem('variastoria_state', JSON.stringify(appState));
+                renderLedger();
+            }
+        }
+
         function prefillBooking(dest) {
             document.getElementById('input-destination').value = dest;
             document.getElementById('booking-section').scrollIntoView();
         }
 
-        // Run UI update on load
+        // Initialize on load
         renderUI();
     </script>
 </body>
