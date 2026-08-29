@@ -20,12 +20,12 @@
                 </span>
                 
                 <div class="hidden md:flex items-center space-x-8">
+                    <div id="status-banner" class="text-sm font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 transition-colors">
+                        Loading availability...
+                    </div>
                     <a href="#destinations" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Destinations</a>
                     <a href="tel:02041280989" class="text-slate-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2">
-                        📞 Call Us: 02041280989
-                    </a>
-                    <a href="#booking-section" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg">
-                        Book a Stay
+                        📞 Call Us
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                         <span class="block text-blue-600 xl:inline">stays in the Philippines.</span>
                     </h1>
                     <p class="mt-3 text-base text-slate-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        Welcome to Variastoria Resorts. From the white sands of Boracay to the vibrant city lights of Ortigas, discover exceptional daily rentals managed with family pride.
+                        Exclusive daily rentals managed with family pride. Book early to secure our standard rates before daily slots run out.
                     </p>
                     <div class="mt-8">
                         <a href="#destinations" class="inline-block px-8 py-3 font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg">
@@ -59,9 +59,11 @@
 
     <!-- PROPERTIES GRID -->
     <div id="destinations" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="mb-8">
-            <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Our Destinations</h2>
-            <p class="mt-2 text-slate-500 text-lg">Select a location to start your booking.</p>
+        <div class="mb-8 flex justify-between items-end">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Our Destinations</h2>
+                <p class="mt-2 text-slate-500 text-lg">Select a location to start your booking.</p>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -69,14 +71,14 @@
             <!-- Astoria Palawan -->
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Palawan" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5 flex-grow flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-lg text-slate-900">Astoria Palawan</h3>
                             <div class="text-right">
-                                <span class="font-extrabold text-blue-600 text-xl">₱6,500</span>
+                                <span id="price-palawan" class="font-extrabold text-blue-600 text-xl">₱6,500</span>
                             </div>
                         </div>
                         <p class="text-slate-500 text-sm mb-4">📍 Puerto Princesa, Palawan</p>
@@ -90,14 +92,14 @@
             <!-- Astoria Boracay -->
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Boracay" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5 flex-grow flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-lg text-slate-900">Astoria Boracay</h3>
                             <div class="text-right">
-                                <span class="font-extrabold text-blue-600 text-xl">₱8,200</span>
+                                <span id="price-boracay" class="font-extrabold text-blue-600 text-xl">₱8,200</span>
                             </div>
                         </div>
                         <p class="text-slate-500 text-sm mb-4">📍 Station 1, Boracay</p>
@@ -111,14 +113,14 @@
             <!-- Astoria Bohol -->
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Bohol" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5 flex-grow flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-lg text-slate-900">Astoria Bohol</h3>
                             <div class="text-right">
-                                <span class="font-extrabold text-blue-600 text-xl">₱7,500</span>
+                                <span id="price-bohol" class="font-extrabold text-blue-600 text-xl">₱7,500</span>
                             </div>
                         </div>
                         <p class="text-slate-500 text-sm mb-4">📍 Baclayon, Bohol</p>
@@ -132,14 +134,14 @@
             <!-- Astoria Plaza Ortigas -->
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Plaza" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5 flex-grow flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="font-bold text-lg text-slate-900">Astoria Plaza</h3>
                             <div class="text-right">
-                                <span class="font-extrabold text-blue-600 text-xl">₱4,500</span>
+                                <span id="price-ortigas" class="font-extrabold text-blue-600 text-xl">₱4,500</span>
                             </div>
                         </div>
                         <p class="text-slate-500 text-sm mb-4">📍 Ortigas Center, Pasig</p>
@@ -158,96 +160,186 @@
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white p-8 rounded-3xl shadow-xl">
                 <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Book Your Stay</h2>
-                <p class="text-slate-500 mb-8">Fill in your details below and send your request directly to our team via WhatsApp or Text Message.</p>
                 
-                <form id="bookingForm" class="space-y-5" onsubmit="event.preventDefault();">
-                    
+                <form id="bookingForm" class="space-y-5 mt-6" onsubmit="event.preventDefault();">
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1">Destination</label>
-                        <select id="input-destination" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <select id="input-destination" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl">
                             <option value="Astoria Palawan">Astoria Palawan</option>
                             <option value="Astoria Boracay">Astoria Boracay</option>
                             <option value="Astoria Bohol">Astoria Bohol</option>
                             <option value="Astoria Plaza Ortigas">Astoria Plaza Ortigas</option>
                         </select>
                     </div>
-
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-1">Guest Name</label>
-                            <input type="text" id="input-name" placeholder="Juan Dela Cruz" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <input type="text" id="input-name" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required>
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-1">Number of Guests</label>
-                            <input type="number" id="input-guests" placeholder="2" min="1" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <input type="number" id="input-guests" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required>
                         </div>
                     </div>
-
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1">Flight Details (Arrival/Departure)</label>
-                        <textarea id="input-flight" rows="3" placeholder="E.g., Arriving via PR2777 on Oct 12 at 2:00 PM..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        <textarea id="input-flight" rows="2" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" required></textarea>
                     </div>
 
-                    <div class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100">
-                        <!-- WhatsApp Button -->
-                        <button onclick="submitBooking('whatsapp')" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100">
+                        <button onclick="submitBooking('whatsapp')" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-xl shadow-sm">
                             WhatsApp
                         </button>
-
-                        <!-- SMS Text Button -->
-                        <button onclick="submitBooking('sms')" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        <button onclick="submitBooking('sms')" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-sm">
                             Text SMS
                         </button>
-
-                        <!-- Direct Call Button -->
-                        <a href="tel:02041280989" class="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm text-center">
-                            📞 Call Now
-                        </a>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT FOR BOOKING LOGIC -->
-    <script>
-        // Your target phone number (using +64 country code for New Zealand)
-        const targetNumber = "642041280989"; 
+    <!-- FOOTER WITH ADMIN LINK -->
+    <footer class="bg-slate-900 py-8 text-center">
+        <p class="text-slate-500 text-sm">&copy; 2026 Variastoria Resorts.</p>
+        <button onclick="openAdmin()" class="text-slate-700 text-xs mt-4 hover:text-slate-400">Admin Login</button>
+    </footer>
 
-        // Function to jump to form from property cards
-        function prefillBooking(destinationName) {
-            document.getElementById('input-destination').value = destinationName;
-            document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+    <!-- ADMIN MODAL (HIDDEN BY DEFAULT) -->
+    <div id="admin-modal" class="hidden fixed inset-0 bg-slate-900/80 z-[100] flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-slate-900">Admin Dashboard</h3>
+                <button onclick="closeAdmin()" class="text-slate-400 hover:text-red-500 font-bold text-xl">&times;</button>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Daily Total Slot Limit</label>
+                    <input type="number" id="admin-limit" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Surge Price Multiplier (e.g., 1.5 for +50%)</label>
+                    <input type="number" step="0.1" id="admin-surge" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Bookings Processed Today</label>
+                    <div class="flex gap-2">
+                        <input type="number" id="admin-booked" class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg" disabled>
+                        <button onclick="resetBookings()" class="px-4 py-2 bg-red-100 text-red-600 rounded-lg font-bold hover:bg-red-200">Reset</button>
+                    </div>
+                </div>
+                <button onclick="saveAdminSettings()" class="w-full mt-4 bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800">
+                    Save Changes & Update Prices
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Define base data
+        const basePrices = {
+            'palawan': 6500,
+            'boracay': 8200,
+            'bohol': 7500,
+            'ortigas': 4500
+        };
+
+        // 2. Load state from local browser storage (or set defaults)
+        let appState = JSON.parse(localStorage.getItem('variastoria_state')) || {
+            dailyLimit: 5,
+            bookedToday: 0,
+            surgeMultiplier: 1.25 // 25% price increase when slots run out
+        };
+
+        // 3. Core function to update the UI based on inventory
+        function renderUI() {
+            const isSurgeActive = appState.bookedToday >= appState.dailyLimit;
+            const slotsLeft = Math.max(0, appState.dailyLimit - appState.bookedToday);
+            
+            // Update the top banner
+            const banner = document.getElementById('status-banner');
+            if (isSurgeActive) {
+                banner.className = "text-sm font-bold text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-200";
+                banner.innerText = "🚨 Daily slots full! Surge pricing active.";
+            } else {
+                banner.className = "text-sm font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200";
+                banner.innerText = `✅ ${slotsLeft} standard slots remaining today`;
+            }
+
+            // Update prices across the board
+            const multiplier = isSurgeActive ? appState.surgeMultiplier : 1;
+            
+            document.getElementById('price-palawan').innerText = `₱${(basePrices.palawan * multiplier).toLocaleString()}`;
+            document.getElementById('price-boracay').innerText = `₱${(basePrices.boracay * multiplier).toLocaleString()}`;
+            document.getElementById('price-bohol').innerText = `₱${(basePrices.bohol * multiplier).toLocaleString()}`;
+            document.getElementById('price-ortigas').innerText = `₱${(basePrices.ortigas * multiplier).toLocaleString()}`;
         }
 
-        // Function to format and send the message
+        // 4. Booking action triggers inventory update
         function submitBooking(method) {
             const name = document.getElementById('input-name').value;
-            const dest = document.getElementById('input-destination').value;
             const guests = document.getElementById('input-guests').value;
             const flight = document.getElementById('input-flight').value;
 
-            // Simple validation to ensure fields aren't completely empty
-            if(!name || !guests || !flight) {
-                alert("Please fill in your Name, Guest Count, and Flight Details before sending.");
-                return;
-            }
+            if(!name || !guests || !flight) return alert("Please fill in all fields.");
 
-            // Construct the message text
-            const messageText = `Hi Variastoria Resorts! I would like to request a booking.%0A%0A*Destination:* ${dest}%0A*Guest Name:* ${name}%0A*Number of Guests:* ${guests}%0A*Flight Details:* ${flight}`;
+            // Increment bookings and save
+            appState.bookedToday += 1;
+            localStorage.setItem('variastoria_state', JSON.stringify(appState));
+            renderUI(); // Re-render the new prices if limit hit
 
+            // Standard message send logic
+            const dest = document.getElementById('input-destination').value;
+            const msg = `Booking Request:\nDest: ${dest}\nName: ${name}\nGuests: ${guests}\nFlight: ${flight}`;
+            
             if (method === 'whatsapp') {
-                // Opens WhatsApp API
-                window.open(`https://wa.me/${targetNumber}?text=${messageText}`, '_blank');
-            } else if (method === 'sms') {
-                // Opens native SMS app. We encode the URI component so line breaks work on phones.
-                const smsText = encodeURIComponent(`Hi Variastoria Resorts! Booking Request:\nDestination: ${dest}\nName: ${name}\nGuests: ${guests}\nFlight Details: ${flight}`);
-                window.location.href = `sms:+${targetNumber}?body=${smsText}`;
+                window.open(`https://wa.me/642041280989?text=${encodeURIComponent(msg)}`, '_blank');
+            } else {
+                window.location.href = `sms:+642041280989?body=${encodeURIComponent(msg)}`;
             }
         }
+
+        // 5. Admin Panel Functions
+        function openAdmin() {
+            const pwd = prompt("Enter Admin Password (type 'admin' to test):");
+            if(pwd === 'admin') {
+                document.getElementById('admin-modal').classList.remove('hidden');
+                document.getElementById('admin-limit').value = appState.dailyLimit;
+                document.getElementById('admin-surge').value = appState.surgeMultiplier;
+                document.getElementById('admin-booked').value = appState.bookedToday;
+            } else {
+                alert("Incorrect password.");
+            }
+        }
+
+        function closeAdmin() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        function resetBookings() {
+            appState.bookedToday = 0;
+            document.getElementById('admin-booked').value = 0;
+        }
+
+        function saveAdminSettings() {
+            appState.dailyLimit = parseInt(document.getElementById('admin-limit').value);
+            appState.surgeMultiplier = parseFloat(document.getElementById('admin-surge').value);
+            localStorage.setItem('variastoria_state', JSON.stringify(appState));
+            closeAdmin();
+            renderUI();
+            alert("Settings saved. UI has been updated.");
+        }
+
+        // Utility: Scroll to form
+        function prefillBooking(dest) {
+            document.getElementById('input-destination').value = dest;
+            document.getElementById('booking-section').scrollIntoView();
+        }
+
+        // Run UI update on load
+        renderUI();
     </script>
 </body>
 </html>
