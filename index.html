@@ -1,320 +1,153 @@
-import React, { useState } from 'react';
-import { Search, MapPin, BedDouble, Bath, Wifi, Plane, Calendar, Heart, Menu, X, ChevronRight } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variastoria Resorts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth scrolling for a premium feel */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
 
-// --- MOCK DATA ---
-const astoriaRooms = [
-  {
-    id: 1,
-    title: "Luxury Suite - Astoria Palawan",
-    price: 5500,
-    location: "Puerto Princesa, Palawan",
-    type: "Resort Suite",
-    amenities: ["Beachfront", "Waterpark", "Spa"],
-    distance: "Private Beach",
-    available: "Available Now",
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 2,
-    title: "Premier Room - Astoria Boracay",
-    price: 6500,
-    location: "Station 1, Boracay",
-    type: "Beachfront Room",
-    amenities: ["Pool Access", "White Sand", "Bar"],
-    distance: "Station 1 Beachfront",
-    available: "Booking Fast",
-    image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 3,
-    title: "Ocean Villa - Astoria Bohol",
-    price: 7000,
-    location: "Baclayon, Bohol",
-    type: "Private Villa",
-    amenities: ["Infinity Pool", "Heritage Design", "Restaurant"],
-    distance: "Seafront",
-    available: "Available Now",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: 4,
-    title: "Executive Suite - Astoria Ortigas",
-    price: 4500,
-    location: "Ortigas Center, Pasig City",
-    type: "City Hotel",
-    amenities: ["Indoor Pool", "Business Center", "Gym"],
-    distance: "CBD Heart",
-    available: "Available Now",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1e52d15461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  }
-];
-
-export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      
-      {/* --- NAVIGATION --- */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
-            <div className="flex items-center">
-              <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight">
-                Variastoria.
-              </span>
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-slate-600 hover:text-blue-600 font-medium transition-colors">Browse Rooms</a>
-              <a href="#" className="text-slate-600 hover:text-blue-600 font-medium transition-colors">Neighborhoods</a>
-              <a href="#" className="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg">
-                List a Room
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="flex items-center md:hidden">
-              <button 
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-slate-600 hover:text-blue-600 focus:outline-none"
-              >
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Menu Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Browse Rooms</a>
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Neighborhoods</a>
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">About Us</a>
-            <a href="#" className="block px-3 py-2 mt-4 text-center rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700">List a Room</a>
-          </div>
-        )}
-      </nav>
-
-      {/* --- HERO SECTION --- */}
-      <div className="relative bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-16 px-4 sm:px-6 lg:px-8">
-            <main className="mt-10 mx-auto max-w-7xl sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28">
-              <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline">Experience luxury</span>{' '}
-                  <span className="block text-blue-600 xl:inline">in the Philippines.</span>
-                </h1>
-                <p className="mt-3 text-base text-slate-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Welcome to Variastoria. From the pristine beaches of Palawan and Boracay to the heart of Ortigas, discover your perfect daily getaway with our premium properties.
-                </p>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <span class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-tight">
+                    Variastoria Resorts.
+                </span>
                 
-                {/* Search Bar */}
-                <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-                  <div className="flex flex-col sm:flex-row gap-3 bg-white p-2 rounded-2xl shadow-lg border border-slate-100">
-                    <div className="relative flex-grow">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Search className="h-5 w-5 text-slate-400" />
-                      </div>
-                      <input
-                        type="text"
-                        className="block w-full pl-10 pr-3 py-3 border-none rounded-xl focus:ring-2 focus:ring-blue-500 bg-slate-50 text-slate-900 placeholder-slate-400"
-                        placeholder="Search Palawan, Boracay, Bohol, Ortigas..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
-                    </div>
-                    <button className="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-lg md:px-10 transition-colors">
-                      Search
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Destinations</a>
+                    <a href="#" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Offers</a>
+                    <a href="#" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">The Varias Trust</a>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg">
+                        Book a Stay
                     </button>
-                  </div>
                 </div>
-              </div>
-            </main>
-          </div>
-        </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-            alt="Philippine luxury resort"
-          />
-        </div>
-      </div>
-
-      {/* --- LATEST LISTINGS --- */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex justify-between items-end mb-8">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight">Featured Philippine Destinations</h2>
-            <p className="mt-2 text-slate-500 text-lg">Hand-picked properties for your perfect vacation or city stay.</p>
-          </div>
-          <button className="hidden sm:flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
-            View all listings <ChevronRight size={20} className="ml-1" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {astoriaRooms.map((room) => (
-            <div key={room.id} className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group cursor-pointer">
-              {/* Image Container */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={room.image} 
-                  alt={room.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow-sm hover:bg-red-50 hover:text-red-500 transition-colors">
-                  <Heart size={18} className="text-slate-400 hover:text-red-500" />
-                </div>
-                <div className="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-                  {room.type}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-5">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-bold text-lg text-slate-900 leading-tight truncate pr-4">{room.title}</h3>
-                  <div className="text-right">
-                    <span className="font-extrabold text-blue-600 text-xl">₱{room.price.toLocaleString()}</span>
-                    <span className="text-xs text-slate-500 block">/day</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center text-slate-500 text-sm mb-4">
-                  <MapPin size={14} className="mr-1 text-slate-400" />
-                  <span className="truncate">{room.location}</span>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <div className="flex items-center text-xs font-medium text-slate-600 bg-slate-100 px-2 py-1 rounded-md">
-                    <Plane size={12} className="mr-1 text-slate-500" /> {room.distance}
-                  </div>
-                  <div className="flex items-center text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md">
-                    <Calendar size={12} className="mr-1 text-emerald-600" /> {room.available}
-                  </div>
-                </div>
-
-                <div className="border-t border-slate-100 pt-4 flex gap-4 text-sm text-slate-600">
-                  <div className="flex items-center" title="Bedrooms">
-                    <BedDouble size={16} className="mr-1.5 text-slate-400" /> 1
-                  </div>
-                  <div className="flex items-center" title="Bathrooms">
-                    <Bath size={16} className="mr-1.5 text-slate-400" /> Shared
-                  </div>
-                  <div className="flex items-center" title="WiFi Included">
-                    <Wifi size={16} className="mr-1.5 text-slate-400" /> Yes
-                  </div>
-                </div>
-              </div>
             </div>
-          ))}
         </div>
-        
-        <button className="w-full sm:hidden mt-8 flex items-center justify-center px-4 py-3 border border-slate-200 text-base font-medium rounded-xl text-slate-700 bg-white hover:bg-slate-50 transition-colors shadow-sm">
-          View all listings
-        </button>
-      </div>
+    </nav>
 
-      {/* --- WHY VARIASTORIA --- */}
-      <div className="bg-blue-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-                The Varias Difference.
-              </h2>
-              <p className="mt-4 text-lg text-blue-100">
-                Finding the perfect getaway shouldn't feel like a gamble. The Varias family started this platform to bring trust, luxury, and authentic Philippine hospitality to your daily rentals. Whether it's a beachfront resort or a premium city suite, we guarantee excellence.
-              </p>
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center text-blue-50">
-                  <div className="bg-blue-500 p-2 rounded-full mr-4">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-lg">Premium Locations Across the Philippines</span>
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-16 px-4 sm:px-6 lg:px-8">
+                <div class="sm:text-center lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl">
+                        <span class="block xl:inline">Experience premium</span>
+                        <span class="block text-blue-600 xl:inline">stays in the Philippines.</span>
+                    </h1>
+                    <p class="mt-3 text-base text-slate-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Welcome to Variastoria Resorts. From the white sands of Boracay to the vibrant city lights of Ortigas, discover exceptional daily rentals managed with family pride.
+                    </p>
+                    
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="flex flex-col sm:flex-row gap-3 bg-white p-2 rounded-2xl shadow-lg border border-slate-100">
+                            <input type="text" class="block w-full px-4 py-3 border-none rounded-xl focus:ring-2 focus:ring-blue-500 bg-slate-50 text-slate-900 placeholder-slate-400" placeholder="Palawan, Boracay, Bohol...">
+                            <button class="w-full sm:w-auto px-8 py-3 font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                                Search
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex items-center text-blue-50">
-                  <div className="bg-blue-500 p-2 rounded-full mr-4">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-lg">Direct communication with landlords</span>
-                </div>
-                <div className="flex items-center text-blue-50">
-                  <div className="bg-blue-500 p-2 rounded-full mr-4">
-                    <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-lg">Secure digital lease signing</span>
-                </div>
-              </div>
             </div>
-            <div className="relative">
-              <img 
-                className="rounded-2xl shadow-2xl" 
-                src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Happy resort guests"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
-                <p className="text-4xl font-black text-blue-600 mb-1">10k+</p>
-                <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">Guests Hosted</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      {/* --- FOOTER --- */}
-      <footer className="bg-slate-900 text-slate-300 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <span className="text-2xl font-bold text-white tracking-tight block mb-4">
-              Variastoria.
-            </span>
-            <p className="text-slate-400 max-w-sm mb-6">
-              The smartest way to book daily luxury rentals in the Philippines. Brought to you by the Varias family trust.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Destinations</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Astoria Palawan</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Astoria Boracay</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Astoria Bohol</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Astoria Ortigas</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm">
-              <li>support@variastoria.com</li>
-              <li>(555) 123-4567</li>
-              <li className="mt-4 pt-4 border-t border-slate-700">
-                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">List your room</a>
-              </li>
-            </ul>
-          </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Luxury tropical resort pool">
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-sm text-slate-500 text-center md:text-left flex flex-col md:flex-row justify-between">
-          <p>&copy; {new Date().getFullYear()} Variastoria. All rights reserved.</p>
-          <div className="space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-        </div>
-      </footer>
-
     </div>
-  );
-}
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Our Destinations</h2>
+            <p class="mt-2 text-slate-500 text-lg">Daily rentals for your perfect getaway.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Palawan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Luxury Suite</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Palawan</h3>
+                        <div class="text-right">
+                            <span class="font-extrabold text-blue-600 text-xl">₱6,500</span>
+                            <span class="text-xs text-slate-500 block">/day</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">📍 Puerto Princesa, Palawan</p>
+                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
+                        ✓ Available Today
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Boracay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Pool Access</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Boracay</h3>
+                        <div class="text-right">
+                            <span class="font-extrabold text-blue-600 text-xl">₱8,200</span>
+                            <span class="text-xs text-slate-500 block">/day</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">📍 Station 1, Boracay</p>
+                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
+                        ✓ Available Tomorrow
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Bohol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Boutique Villa</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Bohol</h3>
+                        <div class="text-right">
+                            <span class="font-extrabold text-blue-600 text-xl">₱7,500</span>
+                            <span class="text-xs text-slate-500 block">/day</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">📍 Baclayon, Bohol</p>
+                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
+                        ✓ Available Next Week
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Plaza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">City Suite</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Plaza</h3>
+                        <div class="text-right">
+                            <span class="font-extrabold text-blue-600 text-xl">₱4,500</span>
+                            <span class="text-xs text-slate-500 block">/day</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm mb-4">📍 Ortigas Center, Pasig</p>
+                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
+                        ✓ Available Today
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
