@@ -6,12 +6,12 @@
     <title>Variastoria Resorts</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Smooth scrolling for a premium feel */
         html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
 
+    <!-- NAVIGATION -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -20,17 +20,19 @@
                 </span>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Destinations</a>
-                    <a href="#" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Offers</a>
-                    <a href="#" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">The Varias Trust</a>
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg">
+                    <a href="#destinations" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Destinations</a>
+                    <a href="tel:02041280989" class="text-slate-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-2">
+                        📞 Call Us: 02041280989
+                    </a>
+                    <a href="#booking-section" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg">
                         Book a Stay
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <div class="relative bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-16 px-4 sm:px-6 lg:px-8">
@@ -42,14 +44,10 @@
                     <p class="mt-3 text-base text-slate-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                         Welcome to Variastoria Resorts. From the white sands of Boracay to the vibrant city lights of Ortigas, discover exceptional daily rentals managed with family pride.
                     </p>
-                    
-                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-                        <div class="flex flex-col sm:flex-row gap-3 bg-white p-2 rounded-2xl shadow-lg border border-slate-100">
-                            <input type="text" class="block w-full px-4 py-3 border-none rounded-xl focus:ring-2 focus:ring-blue-500 bg-slate-50 text-slate-900 placeholder-slate-400" placeholder="Palawan, Boracay, Bohol...">
-                            <button class="w-full sm:w-auto px-8 py-3 font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-                                Search
-                            </button>
-                        </div>
+                    <div class="mt-8">
+                        <a href="#destinations" class="inline-block px-8 py-3 font-medium rounded-xl text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg">
+                            View Destinations
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,95 +57,197 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- PROPERTIES GRID -->
+    <div id="destinations" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="mb-8">
             <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Our Destinations</h2>
-            <p class="mt-2 text-slate-500 text-lg">Daily rentals for your perfect getaway.</p>
+            <p class="mt-2 text-slate-500 text-lg">Select a location to start your booking.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+            <!-- Astoria Palawan -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Palawan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Luxury Suite</div>
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Palawan" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Palawan</h3>
-                        <div class="text-right">
-                            <span class="font-extrabold text-blue-600 text-xl">₱6,500</span>
-                            <span class="text-xs text-slate-500 block">/day</span>
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Astoria Palawan</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-blue-600 text-xl">₱6,500</span>
+                            </div>
                         </div>
+                        <p class="text-slate-500 text-sm mb-4">📍 Puerto Princesa, Palawan</p>
                     </div>
-                    <p class="text-slate-500 text-sm mb-4">📍 Puerto Princesa, Palawan</p>
-                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
-                        ✓ Available Today
-                    </div>
+                    <button onclick="prefillBooking('Astoria Palawan')" class="w-full mt-2 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-medium rounded-lg transition-colors">
+                        Book this Resort
+                    </button>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+            <!-- Astoria Boracay -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Boracay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Pool Access</div>
+                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Boracay" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Boracay</h3>
-                        <div class="text-right">
-                            <span class="font-extrabold text-blue-600 text-xl">₱8,200</span>
-                            <span class="text-xs text-slate-500 block">/day</span>
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Astoria Boracay</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-blue-600 text-xl">₱8,200</span>
+                            </div>
                         </div>
+                        <p class="text-slate-500 text-sm mb-4">📍 Station 1, Boracay</p>
                     </div>
-                    <p class="text-slate-500 text-sm mb-4">📍 Station 1, Boracay</p>
-                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
-                        ✓ Available Tomorrow
-                    </div>
+                    <button onclick="prefillBooking('Astoria Boracay')" class="w-full mt-2 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-medium rounded-lg transition-colors">
+                        Book this Resort
+                    </button>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+            <!-- Astoria Bohol -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Bohol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Boutique Villa</div>
+                    <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Bohol" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Bohol</h3>
-                        <div class="text-right">
-                            <span class="font-extrabold text-blue-600 text-xl">₱7,500</span>
-                            <span class="text-xs text-slate-500 block">/day</span>
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Astoria Bohol</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-blue-600 text-xl">₱7,500</span>
+                            </div>
                         </div>
+                        <p class="text-slate-500 text-sm mb-4">📍 Baclayon, Bohol</p>
                     </div>
-                    <p class="text-slate-500 text-sm mb-4">📍 Baclayon, Bohol</p>
-                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
-                        ✓ Available Next Week
-                    </div>
+                    <button onclick="prefillBooking('Astoria Bohol')" class="w-full mt-2 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-medium rounded-lg transition-colors">
+                        Book this Resort
+                    </button>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 group">
+            <!-- Astoria Plaza Ortigas -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Plaza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">City Suite</div>
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Astoria Plaza" class="w-full h-full object-cover">
                 </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-slate-900 leading-tight">Astoria Plaza</h3>
-                        <div class="text-right">
-                            <span class="font-extrabold text-blue-600 text-xl">₱4,500</span>
-                            <span class="text-xs text-slate-500 block">/day</span>
+                <div class="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Astoria Plaza</h3>
+                            <div class="text-right">
+                                <span class="font-extrabold text-blue-600 text-xl">₱4,500</span>
+                            </div>
                         </div>
+                        <p class="text-slate-500 text-sm mb-4">📍 Ortigas Center, Pasig</p>
                     </div>
-                    <p class="text-slate-500 text-sm mb-4">📍 Ortigas Center, Pasig</p>
-                    <div class="flex gap-2 text-xs font-medium text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md inline-block">
-                        ✓ Available Today
-                    </div>
+                    <button onclick="prefillBooking('Astoria Plaza Ortigas')" class="w-full mt-2 py-2 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-medium rounded-lg transition-colors">
+                        Book this Resort
+                    </button>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <!-- BOOKING FORM SECTION -->
+    <div id="booking-section" class="bg-blue-50 py-16 border-t border-blue-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 rounded-3xl shadow-xl">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Book Your Stay</h2>
+                <p class="text-slate-500 mb-8">Fill in your details below and send your request directly to our team via WhatsApp or Text Message.</p>
+                
+                <form id="bookingForm" class="space-y-5" onsubmit="event.preventDefault();">
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Destination</label>
+                        <select id="input-destination" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="Astoria Palawan">Astoria Palawan</option>
+                            <option value="Astoria Boracay">Astoria Boracay</option>
+                            <option value="Astoria Bohol">Astoria Bohol</option>
+                            <option value="Astoria Plaza Ortigas">Astoria Plaza Ortigas</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Guest Name</label>
+                            <input type="text" id="input-name" placeholder="Juan Dela Cruz" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">Number of Guests</label>
+                            <input type="number" id="input-guests" placeholder="2" min="1" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">Flight Details (Arrival/Departure)</label>
+                        <textarea id="input-flight" rows="3" placeholder="E.g., Arriving via PR2777 on Oct 12 at 2:00 PM..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+
+                    <div class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100">
+                        <!-- WhatsApp Button -->
+                        <button onclick="submitBooking('whatsapp')" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </button>
+
+                        <!-- SMS Text Button -->
+                        <button onclick="submitBooking('sms')" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                            Text SMS
+                        </button>
+
+                        <!-- Direct Call Button -->
+                        <a href="tel:02041280989" class="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-sm text-center">
+                            📞 Call Now
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT FOR BOOKING LOGIC -->
+    <script>
+        // Your target phone number (using +64 country code for New Zealand)
+        const targetNumber = "642041280989"; 
+
+        // Function to jump to form from property cards
+        function prefillBooking(destinationName) {
+            document.getElementById('input-destination').value = destinationName;
+            document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Function to format and send the message
+        function submitBooking(method) {
+            const name = document.getElementById('input-name').value;
+            const dest = document.getElementById('input-destination').value;
+            const guests = document.getElementById('input-guests').value;
+            const flight = document.getElementById('input-flight').value;
+
+            // Simple validation to ensure fields aren't completely empty
+            if(!name || !guests || !flight) {
+                alert("Please fill in your Name, Guest Count, and Flight Details before sending.");
+                return;
+            }
+
+            // Construct the message text
+            const messageText = `Hi Variastoria Resorts! I would like to request a booking.%0A%0A*Destination:* ${dest}%0A*Guest Name:* ${name}%0A*Number of Guests:* ${guests}%0A*Flight Details:* ${flight}`;
+
+            if (method === 'whatsapp') {
+                // Opens WhatsApp API
+                window.open(`https://wa.me/${targetNumber}?text=${messageText}`, '_blank');
+            } else if (method === 'sms') {
+                // Opens native SMS app. We encode the URI component so line breaks work on phones.
+                const smsText = encodeURIComponent(`Hi Variastoria Resorts! Booking Request:\nDestination: ${dest}\nName: ${name}\nGuests: ${guests}\nFlight Details: ${flight}`);
+                window.location.href = `sms:+${targetNumber}?body=${smsText}`;
+            }
+        }
+    </script>
 </body>
 </html>
